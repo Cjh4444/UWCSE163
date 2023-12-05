@@ -8,13 +8,19 @@ def countdown(start_time):
         print(str(i))
     print("Done!")
 
-countdown(60)
-print()
-countdown(15)
-print()
-countdown(-4)
-print()
-countdown(0)
+def main():
+    countdown(60)
+    print()
+    countdown(15)
+    print()
+    countdown(-4)
+    print()
+    countdown(0)
+
+if __name__ == "__main__":
+    main()
+
+
 
     
 

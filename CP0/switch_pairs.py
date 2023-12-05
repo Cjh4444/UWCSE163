@@ -6,7 +6,11 @@ def switch_pairs(word):
     return_string += word[len(word) - 1] if len(word) % 2 == 1 else ""
     return return_string
 
+def main():
+    assert switch_pairs("example") == "xemalpe"
+    assert switch_pairs("hello there") == "ehll ohtree"
 
-assert switch_pairs("example") == "xemalpe"
-assert switch_pairs("hello there") == "ehll ohtree"
+if __name__ == "__main__":
+    main()
+
     
