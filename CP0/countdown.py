@@ -2,11 +2,12 @@ def countdown(start_time):
     if start_time < 0:
         print("Start must be non-negative!")
         return
-    
+
     print(str(start_time) + " minute countdown")
     for i in range(start_time, -1, -10):
         print(str(i))
     print("Done!")
+
 
 def main():
     countdown(60)
@@ -17,12 +18,6 @@ def main():
     print()
     countdown(0)
 
+
 if __name__ == "__main__":
     main()
-
-
-
-    
-
-
-    
