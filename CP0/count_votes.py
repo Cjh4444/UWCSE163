@@ -1,5 +1,5 @@
 def count_votes(votes):
-    results = [0] * (max(votes) + 1)
+    results = [0] * 3
     for i in votes:
         results[i] += 1
     return results
