@@ -1,3 +1,7 @@
+"""
+Camden Harris
+"""
+
 def count_votes(votes):
     results = [0] * 3
     for i in votes:
