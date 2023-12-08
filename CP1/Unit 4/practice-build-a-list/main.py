@@ -1,10 +1,7 @@
 # Write your function here
+
 def fun_numbers(x, y):
-    nums = []
-    for i in range(x, y):
-        if i % 5 == 0 or i % 2 == 0:
-            nums.append(i)
-    return nums
+    return [i for i in list(range(x, y)) if (i % 5 == 0 or i % 2 == 0)]
 
 
 def main():
