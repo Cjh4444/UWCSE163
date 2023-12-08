@@ -6,7 +6,6 @@ def filter_long_lines(file_name, min_words):
     # Write your code here :)
 
     with open("CP1/Unit 4/practice-filter-long-lines/" + file_name, "r") as f:
-        print()
         for line in f:
             if len(line.split()) >= min_words:
                 print(line, end="")

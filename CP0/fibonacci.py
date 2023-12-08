@@ -1,11 +1,7 @@
 def fibonacci(max_num):
-    prev_num = 0
-    curr_num = 1
-
+    prev_num, curr_num = 0, 1
     while (curr_num <= max_num):
-        temp = curr_num
-        curr_num += prev_num
-        prev_num = temp
+        prev_num, curr_num = curr_num, curr_num + prev_num
     return curr_num
 
 
