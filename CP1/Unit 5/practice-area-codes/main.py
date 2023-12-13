@@ -1,5 +1,6 @@
 # Define your function up here!
 def area_codes(list):
+
     temp_list = [x.split("-") for x in list]
     temp_list = [x[0] for x in temp_list]
     return set(temp_list)
