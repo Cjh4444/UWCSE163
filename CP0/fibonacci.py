@@ -1,11 +1,19 @@
-def fibonacci(max_num):
-    prev_num = 0
-    curr_num = 1
+"""
+Camden Harris
+CSE 163 AX
+Implementation of function to get the next fibonacci number after a given max
+"""
 
+
+def fibonacci(max_num: int) -> int:
+    """
+    Returns the next fibonacci number after the max_num
+    Keyword arguments:
+    max_num -- maximum number for fibonacci sequence to count to
+    """
+    prev_num, curr_num = 0, 1
     while (curr_num <= max_num):
-        temp = curr_num
-        curr_num += prev_num
-        prev_num = temp
+        prev_num, curr_num = curr_num, curr_num + prev_num
     return curr_num
 
 
