@@ -4,6 +4,7 @@ from contextlib import redirect_stdout
 from test.grading_utils import error_message
 
 import main
+import os
 
 
 def capture_output(fun, *args):
@@ -20,7 +21,10 @@ class TestCountdown(unittest.TestCase):
         """
         val = capture_output(main.filter_long_lines, "song.txt", 7)
 
-        with open("CP1/practice-filter-long-lines/test/output.txt", "r") as f:
+        with open(
+            os.getcwd() + "/CP1/Unit 4/filter-long-lines/test/output.txt",
+            "r",
+        ) as f:
             ans = f.read()
 
         self.assertEqual(ans.strip(), val.strip(), error_message(ans, val))

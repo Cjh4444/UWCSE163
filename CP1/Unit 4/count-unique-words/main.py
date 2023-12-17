@@ -1,11 +1,22 @@
-# Write your function here!
-def count_unique_words(file_name):
-    file_set = set()
-    with open("CP1/Unit 4/practice-count-unique-words/" + file_name) as f:
-        for line in f:
-            temp_set = set(line.split())
-            file_set.update(temp_set)
-    return len(file_set)
+"""
+Camden Harris
+CSE 163 AX
+Implementation of function that counts the number of unique words in a file
+"""
+
+import os
+
+
+def count_unique_words(file_name: str) -> int:
+    """
+    Returns the number of unique tokens that appear in that file
+    Keyword arguments:
+    file_name -- name of file to open
+    """
+    file_path = os.getcwd() + "/CP1/Unit 4/count-unique-words/" + file_name
+
+    with open(file_path) as f:
+        return len(set(f.read().split()))
 
 
 def main():
