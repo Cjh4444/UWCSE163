@@ -86,6 +86,20 @@ def travel(directions: str, x: int, y: int):
     return (x, y)
 
 
+def reformat_date(date: str, old_format: str, new_format: str) -> str:
+    format_to_date_dict = {
+        old_form: old_date
+        for old_form, old_date in zip(
+            old_format.split("/"),
+            date.split("/"),
+        )
+    }
+
+    return "/".join(
+        [format_to_date_dict[new_form] for new_form in new_format.split("/")],
+    )
+
+
 def longest_word(file_name: str) -> str:
     """
     Returns the longest word and it's line location from a file
@@ -121,7 +135,13 @@ def get_average_in_range(values: list, low: int, high: int) -> float:
     return sum / num_terms if num_terms > 0 else 0
 
 
-def mode_digit(n):
+def mode_digit(n: int) -> int:
+    """
+    Returns the most common digit in a number, in the instance of a tie
+    the larger number is returned
+    Keyword arguments:
+    n -- number made up of digits
+    """
     if n == 0:
         return 0
 

@@ -1,7 +1,7 @@
 """
-<name>
-<period>
-<file description>
+Camden Harris
+CSE 163 AX
+This program contains the tests for the hw1.py file
 """
 import hw1
 
@@ -50,6 +50,18 @@ def test_travel():
     print("travel passed all tests")
 
 
+def test_reformat_date():
+    assert_equals(
+        "31/12/1998", hw1.reformat_date("12/31/1998", "M/D/Y", "D/M/Y")
+    )
+    assert_equals("3/1/2", hw1.reformat_date("1/2/3", "M/D/Y", "Y/M/D"))
+    assert_equals("4/0", hw1.reformat_date("0/200/4", "Y/D/M", "M/Y"))
+    assert_equals("2", hw1.reformat_date("3/2", "M/D", "D"))
+    assert_equals("10", hw1.reformat_date("10", "D", "D"))
+    assert_equals("07/09/05", hw1.reformat_date("09/07/05", "M/D/Y", "D/M/Y"))
+    print("reformat date passed all tests")
+
+
 def test_longest_word():
     assert_equals("3: Merrily,", hw1.longest_word("HW1/song.txt"))
     assert_equals("3: everywhere", hw1.longest_word("HW1/little_lamb.txt"))
@@ -79,6 +91,7 @@ def main():
     test_count_divisible_digits()
     test_is_relatively_prime()
     test_travel()
+    test_reformat_date()
     test_longest_word()
     test_get_average_in_range()
     test_mode_digit()
