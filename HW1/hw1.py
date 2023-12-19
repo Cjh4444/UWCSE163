@@ -130,6 +130,13 @@ def longest_word(file_name: str) -> str:
 
 
 def get_average_in_range(values: list, low: int, high: int) -> float:
+    """
+    Returns the average of the values in a list between bounds
+    Keyword arguments:
+    list -- list of numbers
+    low -- lower bound of range (inclusive)
+    high -- upper bound of range (exclusive)
+    """
     if len(values) == 0:
         return 0
 
