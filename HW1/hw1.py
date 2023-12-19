@@ -87,6 +87,13 @@ def travel(directions: str, x: int, y: int):
 
 
 def reformat_date(date: str, old_format: str, new_format: str) -> str:
+    """
+    Returns a reformatted a date string from an old format to a new one
+    Keyword arguments:
+    date -- date string
+    old_format -- old format of date
+    new_format -- new/desired format of date
+    """
     format_to_date_dict = {
         old_form: old_date
         for old_form, old_date in zip(
