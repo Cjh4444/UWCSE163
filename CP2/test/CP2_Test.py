@@ -1,23 +1,25 @@
 import pandas as pd
 import math
+from cse163_utils import assert_equals
+
 
 
 def lesson9_prob4_test():
     # Enter code here
     ok = compare_plots("prob4.png", "test/prob4.png")
-    self.assertEquals(ok, True)
+    assert_equals(ok, True)
 
 
 def test_():
     df = pd.read_csv("data/earthquakes.csv")
     ans = 1.5129
     ok = math.isclose(ans, lesson7.problem_0(df), abs_tol=0.001)
-    self.assertEquals(ok, True)
+    assert_equals(ok, True)
 
 
 def test_():
     df = pd.read_csv("data/earthquakes.csv")
-    self.assertEquals(3040, lesson7.problem_1(df))
+    assert_equals(3040, lesson7.problem_1(df))
 
 
 def test_():
@@ -26,7 +28,7 @@ def test_():
     ids = ["us10006cwy", "us10006cx0", "us10006cxc", "us10006cxf"]
     ser = pd.Series(ids, index=[3877, 3897, 4012, 4036])
     ok = series_equals(df_result["id"], ser)
-    self.assertEquals(ok, True)
+    assert_equals(ok, True)
 
 
 def test_():
