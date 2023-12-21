@@ -3,13 +3,6 @@ import math
 from cse163_utils import assert_equals
 
 
-
-def lesson9_prob4_test():
-    # Enter code here
-    ok = compare_plots("prob4.png", "test/prob4.png")
-    assert_equals(ok, True)
-
-
 def test_():
     df = pd.read_csv("data/earthquakes.csv")
     ans = 1.5129
@@ -45,7 +38,7 @@ def test_():
     ans = df.groupby("shape")["duration (seconds)"].mean()
     result = lesson8.problem_0(df)
     ok = series_equals(ans, result)
-    self.assertEquals(ok, True)
+    self.assert_equals(ok, True)
 
 
 def test_():
@@ -57,37 +50,43 @@ def test_():
     )
     result = lesson8.problem_1(df)
     ok = series_equals(ans, result)
-    assertEquals(ok, True)
+    assert_equals(ok, True)
 
 
 def test_():
     df = pd.read_csv("data/ufos.csv")
     ans = "birmingham (uk/england)"
     result = lesson8.problem_2(df)
-    assertEquals(ans, result)
+    assert_equals(ans, result)
 
 
-def test_()):
+def test_():
     df = pd.read_csv("data/ufos.csv")
     vals = [24, 17, 6, 26, 25, 29, 26, 16, 20, 16]
     ser = pd.Series(vals)
     result = lesson8.problem_3(df)
     ok = series_equals(ser, result[0:10])
-    assertEquals(ok, True)
+    assert_equals(ok, True)
 
 
 def lesson9_prob1_test():
     # Enter code here
     ok = compare_plots("prob1.png", "test/prob1.png")
-    assertEquals(ok, True)
+    assert_equals(ok, True)
+
 
 def lesson9_prob2_test():
     ok = compare_plots("prob2.png", "test/prob2.png")
-    self.assertEquals(ok, True)
+    assert_equals(ok, True)
 
 
 def lesson9_prob3_test():
     # Enter code here
     ok = compare_plots("prob3.png", "test/prob3.png")
-    self.assertEquals(ok, True)
+    assert_equals(ok, True)
 
+
+def lesson9_prob4_test():
+    # Enter code here
+    ok = compare_plots("prob4.png", "test/prob4.png")
+    assert_equals(ok, True)
