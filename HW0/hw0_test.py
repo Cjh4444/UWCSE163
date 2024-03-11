@@ -17,6 +17,7 @@ def test_total():
     assert_equals(0, hw0.total(0))
 
 
+# test cases for funky_sum function
 def test_funky_sum():
     assert_equals(1, hw0.funky_sum(1, 3, 0))
     assert_equals(3, hw0.funky_sum(1, 3, 1))
@@ -25,18 +26,20 @@ def test_funky_sum():
     assert_equals(1, hw0.funky_sum(1, 3, -1))
 
 
+# test cases for swip_swap function
 def test_swip_swap():
-    assert_equals('offbar', hw0.swip_swap('foobar', 'f', 'o'))
-    assert_equals('foocar', hw0.swip_swap('foobar', 'b', 'c'))
-    assert_equals("ginbgonb", hw0.swip_swap("bingbong", 'b', 'g'))
-    assert_equals("olo", hw0.swip_swap("lol", 'l', 'o'))
+    assert_equals("offbar", hw0.swip_swap("foobar", "f", "o"))
+    assert_equals("foocar", hw0.swip_swap("foobar", "b", "c"))
+    assert_equals("ginbgonb", hw0.swip_swap("bingbong", "b", "g"))
+    assert_equals("olo", hw0.swip_swap("lol", "l", "o"))
 
 
+# main function to run test cases
 def main():
     test_total()
     test_funky_sum()
     test_swip_swap()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
