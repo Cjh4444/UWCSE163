@@ -3,6 +3,7 @@ Camden Harris
 CSE 163 AX
 This program implements the functions for HW1
 """
+
 # do not import math
 
 
@@ -30,6 +31,8 @@ def count_divisible_digits(n: int, m: int) -> int:
     """
     if m == 0:
         return 0
+    if n == 0:
+        return 1
 
     num_divisible_digits = 0
 
@@ -126,6 +129,8 @@ def longest_word(file_name: str) -> str:
                     longest_word = word
                     longest_word_length = word_length
                     line_number_of_word = line_number
+        if longest_word is None:
+            return None
     return (str(line_number_of_word) + ": " + longest_word).strip()
 
 

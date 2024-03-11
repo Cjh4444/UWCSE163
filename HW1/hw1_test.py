@@ -3,6 +3,7 @@ Camden Harris
 CSE 163 AX
 This program contains the tests for the hw1.py file
 """
+
 import hw1
 
 from cse163_utils import assert_equals
@@ -28,7 +29,7 @@ def test_count_divisible_digits():
     assert_equals(0, hw1.count_divisible_digits(24, 5))
     assert_equals(0, hw1.count_divisible_digits(1, 0))
     assert_equals(0, hw1.count_divisible_digits(371293, 4))
-    assert_equals(0, hw1.count_divisible_digits(0, 4))
+    assert_equals(1, hw1.count_divisible_digits(0, 4))
     print("count passed all tests")
 
 
@@ -66,6 +67,7 @@ def test_longest_word():
     assert_equals("3: Merrily,", hw1.longest_word("HW1/song.txt"))
     assert_equals("3: everywhere", hw1.longest_word("HW1/little_lamb.txt"))
     assert_equals("1: crawled", hw1.longest_word("HW1/spider.txt"))
+    assert_equals(None, hw1.longest_word("HW1/blank.txt"))
     print("longest word passed all tests")
 
 
