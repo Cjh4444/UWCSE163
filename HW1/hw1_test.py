@@ -24,6 +24,9 @@ def test_total():
 
 
 def test_count_divisible_digits():
+    """
+    Runs test cases for count_divisible_digits function
+    """
     assert_equals(4, hw1.count_divisible_digits(650899, 3))
     assert_equals(1, hw1.count_divisible_digits(-204, 5))
     assert_equals(0, hw1.count_divisible_digits(24, 5))
@@ -34,6 +37,9 @@ def test_count_divisible_digits():
 
 
 def test_is_relatively_prime():
+    """
+    Runs test cases for is_relatively_prime function
+    """
     assert_equals(True, hw1.is_relatively_prime(12, 13))
     assert_equals(False, hw1.is_relatively_prime(12, 14))
     assert_equals(True, hw1.is_relatively_prime(5, 9))
@@ -45,6 +51,9 @@ def test_is_relatively_prime():
 
 
 def test_travel():
+    """
+    Runs test cases for travel function
+    """
     assert_equals((-1, 4), hw1.travel("NW!ewnW", 1, 2))
     assert_equals((0, 0), hw1.travel("", 0, 0))
     assert_equals((5, 8), hw1.travel("NSEW", 5, 8))
@@ -52,6 +61,9 @@ def test_travel():
 
 
 def test_reformat_date():
+    """
+    Runs test cases for reformat_date function
+    """
     assert_equals(
         "31/12/1998", hw1.reformat_date("12/31/1998", "M/D/Y", "D/M/Y")
     )
@@ -64,6 +76,9 @@ def test_reformat_date():
 
 
 def test_longest_word():
+    """
+    Runs test cases for longest_word function
+    """
     assert_equals("3: Merrily,", hw1.longest_word("HW1/song.txt"))
     assert_equals("3: everywhere", hw1.longest_word("HW1/little_lamb.txt"))
     assert_equals("1: crawled", hw1.longest_word("HW1/spider.txt"))
@@ -72,6 +87,9 @@ def test_longest_word():
 
 
 def test_get_average_in_range():
+    """
+    Runs test cases for get_average_in_range function
+    """
     assert_equals(5.5, hw1.get_average_in_range([1, 5, 6, 7, 9], 5, 7))
     assert_equals(2.0, hw1.get_average_in_range([1, 2, 3], -1, 10))
     assert_equals(0, hw1.get_average_in_range([435, 312, 1620, 1150], 0, 100))
@@ -80,6 +98,9 @@ def test_get_average_in_range():
 
 
 def test_mode_digit():
+    """
+    Runs test cases for mode_digit function
+    """
     assert_equals(1, hw1.mode_digit(12121))
     assert_equals(0, hw1.mode_digit(0))
     assert_equals(2, hw1.mode_digit(-122))
@@ -88,6 +109,9 @@ def test_mode_digit():
 
 
 def main():
+    """
+    Main function that runs all test cases
+    """
     test_total()
     # Call your test functions here!
     test_count_divisible_digits()

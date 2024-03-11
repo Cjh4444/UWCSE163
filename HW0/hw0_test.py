@@ -26,10 +26,10 @@ def test_funky_sum():
 
 
 def test_swip_swap():
-    assert_equals('offbar', hw0.swip_swap('foobar', 'f', 'o'))
-    assert_equals('foocar', hw0.swip_swap('foobar', 'b', 'c'))
-    assert_equals("ginbgonb", hw0.swip_swap("bingbong", 'b', 'g'))
-    assert_equals("olo", hw0.swip_swap("lol", 'l', 'o'))
+    assert_equals("offbar", hw0.swip_swap("foobar", "f", "o"))
+    assert_equals("foocar", hw0.swip_swap("foobar", "b", "c"))
+    assert_equals("ginbgonb", hw0.swip_swap("bingbong", "b", "g"))
+    assert_equals("olo", hw0.swip_swap("lol", "l", "o"))
 
 
 def main():
@@ -38,5 +38,5 @@ def main():
     test_swip_swap()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
