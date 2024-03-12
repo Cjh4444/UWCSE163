@@ -1,0 +1,7 @@
+id,name,level,personality,type,weakness,atk,def,hp,stage
+1,Horsea,5,Gentle,water,grass,51,191,170,1
+2,Exeggutor,28,Rash,grass,fire,120,223,142,2
+3,Unfezant,82,Bold,flying,rock,112,185,123,2
+4,Ninetales,47,Bashful,fire,ground,122,198,244,2
+5,Charmander,12,Happy,fire,water,75,82,100,1
+6,Charmander,17,Sad,fire,water,83,91,105,1
