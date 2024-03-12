@@ -1,5 +1,10 @@
-import pandas as pd
+"""
+Camden Harris
+CSE 163 AX
+Tester file for functions in hw2_manual.py and hw2_pandas
+"""
 
+import pandas as pd
 
 from cse163_utils import assert_equals, parse
 
@@ -11,6 +16,9 @@ import hw2_pandas
 def species_count_test(
     data: dict, df: pd.DataFrame, self_data: dict, self_df: pd.DataFrame
 ):
+    """
+    Runs test cases for species_count function
+    """
 
     # tests on given pokemon_test.csv data
     assert_equals(hw2_manual.species_count(data), 3)
@@ -26,7 +34,9 @@ def species_count_test(
 def max_level_test(
     data: dict, df: pd.DataFrame, self_data: dict, self_df: pd.DataFrame
 ):
-
+    """
+    Runs test cases for max_level function
+    """
     # tests on given pokemon_test.csv data
     assert_equals(hw2_manual.max_level(data), ("Lapras", 72))
     assert_equals(hw2_pandas.max_level(df), ("Lapras", 72))
@@ -41,6 +51,9 @@ def max_level_test(
 def filter_range_test(
     data: dict, df: pd.DataFrame, self_data: dict, self_df: pd.DataFrame
 ):
+    """
+    Runs test cases for filter_range function
+    """
 
     # tests on given pokemon_test.csv data
     assert_equals(
@@ -68,6 +81,9 @@ def filter_range_test(
 def mean_attack_for_type_test(
     data: dict, df: pd.DataFrame, self_data: dict, self_df: pd.DataFrame
 ):
+    """
+    Runs test cases for mean_attack_for_type function
+    """
 
     # tests on given pokemon_test.csv data
     assert_equals(
@@ -95,6 +111,9 @@ def mean_attack_for_type_test(
 def count_types_test(
     data: dict, df: pd.DataFrame, self_data: dict, self_df: pd.DataFrame
 ):
+    """
+    Runs test cases for count_types function
+    """
 
     # tests on given pokemon_test.csv data
     assert_equals(
@@ -122,6 +141,9 @@ def count_types_test(
 def mean_attack_per_type_test(
     data: dict, df: pd.DataFrame, self_data: dict, self_df: pd.DataFrame
 ):
+    """
+    Runs test cases for mean_attack_per_type function
+    """
 
     # tests on given pokemon_test.csv data
     assert_equals(
@@ -147,6 +169,9 @@ def mean_attack_per_type_test(
 
 
 def main():
+    """
+    main function to run all test cases
+    """
     # Call your test functions here!
     data = parse("HW2/pokemon_test.csv")
     df = pd.read_csv("HW2/pokemon_test.csv")
