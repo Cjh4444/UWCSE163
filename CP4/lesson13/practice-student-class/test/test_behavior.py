@@ -23,12 +23,18 @@ def import_client():
 
 class SimpleTestCase(unittest.TestCase):
     def setUp(self):
-        self.arlo = Student(1231231, "CP4/practice-student-class/arlo.txt")
-        self.pablo = Student(1551515, "CP4/practice-student-class/pablo.txt")
-        self.suzie = Student(
-            1111111, "CP4/practice-student-class/test/suzie.txt"
+        self.arlo = Student(
+            1231231, "CP4/lesson13/practice-student-class/arlo.txt"
         )
-        self.empty = Student(10, "CP4/practice-student-class/test/empty.txt")
+        self.pablo = Student(
+            1551515, "CP4/lesson13/practice-student-class/pablo.txt"
+        )
+        self.suzie = Student(
+            1111111, "CP4/lesson13/practice-student-class/test/suzie.txt"
+        )
+        self.empty = Student(
+            10, "CP4/lesson13/practice-student-class/test/empty.txt"
+        )
 
     def compare_student(
         self, student, name=None, student_num=None, classes=None
