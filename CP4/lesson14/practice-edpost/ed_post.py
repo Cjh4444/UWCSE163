@@ -2,7 +2,7 @@
 class EdPost:
     _title: str
     _tag: str
-    _comments: list[str] = []
+    _comments: list[str]
 
     def __init__(
         self, title: str, tag: str = "General", comments: list = None

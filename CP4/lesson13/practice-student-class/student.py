@@ -1,7 +1,7 @@
 # Write your Student class here
 class Student:
-    name: str
     student_number: int
+    name: str
     classes: dict[str, int]
 
     def __init__(self, student_number: int, student_file: str) -> None:
@@ -20,11 +20,7 @@ class Student:
         return self.student_number
 
     def get_credits_for(self, class_name: str) -> int:
-        return (
-            self.classes[class_name]
-            if class_name in self.classes.keys()
-            else None
-        )
+        return self.classes[class_name] if class_name in self.classes else None
 
     def get_classes(self) -> list:
-        return list(self.classes.keys())
+        return list(self.classes)

@@ -6,11 +6,11 @@ class DogPack:
     _dogs: list[Dog]
 
     def __init__(self) -> None:
-        self.dogs = []
+        self._dogs = []
 
     def add_dog(self, dog: Dog) -> None:
-        self.dogs.append(dog)
+        self._dogs.append(dog)
 
     def all_bark(self) -> None:
-        for dog in self.dogs:
+        for dog in self._dogs:
             dog.bark()

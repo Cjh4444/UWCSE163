@@ -3,7 +3,7 @@ class Point:
     _x: int
     _y: int
 
-    def __init__(self, x, y) -> None:
+    def __init__(self, x: int, y: int) -> None:
         self.x = x
         self.y = y
 
@@ -13,10 +13,10 @@ class Point:
     def get_y(self) -> int:
         return self.y
 
-    def set_x(self, x) -> None:
+    def set_x(self, x: int) -> None:
         self.x = x
 
-    def set_y(self, y) -> None:
+    def set_y(self, y: int) -> None:
         self.y = y
 
     def display(self) -> str:
