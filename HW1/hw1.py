@@ -40,7 +40,7 @@ def count_divisible_digits(n: int, m: int) -> int:
 
     while n != 0:
         digit = n % 10
-        if (digit / m) % 1 == 0:
+        if digit % m == 0:
             num_divisible_digits += 1
         n //= 10
     return num_divisible_digits
@@ -116,22 +116,19 @@ def longest_word(file_name: str) -> str:
     Keyword arguments:
     file_name -- name of file to scan
     """
+
     longest_word = None
     longest_word_length = 0
-    line_number = 0
     line_number_of_word = 0
     with open(file_name, "r") as f:
-        for line in f:
-            line_number += 1
+        for line_num, line in enumerate(f, start=1):
             for word in line.split():
                 word_length = len(word)
                 if word_length > longest_word_length:
                     longest_word = word
                     longest_word_length = word_length
-                    line_number_of_word = line_number
-        if longest_word is None:
-            return None
-    return (str(line_number_of_word) + ": " + longest_word).strip()
+                    line_number_of_word = line_num
+    return f"{line_number_of_word}: {longest_word}" if longest_word else None
 
 
 def get_average_in_range(values: list, low: int, high: int) -> float:

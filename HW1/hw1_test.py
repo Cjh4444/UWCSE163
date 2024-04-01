@@ -33,6 +33,18 @@ def test_count_divisible_digits():
     assert_equals(0, hw1.count_divisible_digits(1, 0))
     assert_equals(0, hw1.count_divisible_digits(371293, 4))
     assert_equals(1, hw1.count_divisible_digits(0, 4))
+    assert_equals(2, hw1.count_divisible_digits(12345, 2))
+    assert_equals(1, hw1.count_divisible_digits(12345, 4))
+    assert_equals(0, hw1.count_divisible_digits(12345, 6))
+    assert_equals(5, hw1.count_divisible_digits(11111, 1))
+    assert_equals(0, hw1.count_divisible_digits(12345, 0))
+    assert_equals(0, hw1.count_divisible_digits(2, 3))
+    assert_equals(1, hw1.count_divisible_digits(3, 3))
+    assert_equals(1, hw1.count_divisible_digits(0, 3))
+    assert_equals(10, hw1.count_divisible_digits(5555555555, 5))
+    assert_equals(0, hw1.count_divisible_digits(1111111111, 2))
+    assert_equals(1, hw1.count_divisible_digits(0, 1))
+    assert_equals(0, hw1.count_divisible_digits(1234567890, 0))
     print("count passed all tests")
 
 
