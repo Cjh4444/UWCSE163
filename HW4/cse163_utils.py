@@ -10,23 +10,29 @@ def check_approx_equals(expected, received):
     on all of its contents.
     """
     try:
-        if type(expected) == dict:
+        if expected is dict:
             # first check that keys match, then check that the
             # values approximately match
-            return expected.keys() == received.keys() and \
-                all([check_approx_equals(expected[k], received[k])
-                    for k in expected.keys()])
-        elif type(expected) == list or type(expected) == set:
+            return expected.keys() == received.keys() and all(
+                [
+                    check_approx_equals(expected[k], received[k])
+                    for k in expected.keys()
+                ]
+            )
+        elif expected is list or expected is set:
             # Checks both lists/sets contain the same values
-            return len(expected) == len(received) and \
-                all([check_approx_equals(v1, v2)
-                    for v1, v2 in zip(expected, received)])
-        elif type(expected) == float:
+            return len(expected) == len(received) and all(
+                [
+                    check_approx_equals(v1, v2)
+                    for v1, v2 in zip(expected, received)
+                ]
+            )
+        elif expected is float:
             return math.isclose(expected, received, abs_tol=0.001)
         else:
             return expected == received
     except Exception as e:
-        print(f'EXCEPTION: Raised when checking check_approx_equals {e}')
+        print(f"EXCEPTION: Raised when checking check_approx_equals {e}")
         return False
 
 
@@ -37,5 +43,6 @@ def assert_equals(expected, received):
     check. If the arugment is a data structure will do an approximate check
     on all of its contents.
     """
-    assert check_approx_equals(expected, received), \
-        f'Failed: Expected {expected}, but received {received}'
+    assert check_approx_equals(
+        expected, received
+    ), f"Failed: Expected {expected}, but received {received}"
