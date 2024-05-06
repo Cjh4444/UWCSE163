@@ -1,4 +1,5 @@
 import math
+import re
 
 
 def check_approx_equals(expected, received):
@@ -46,3 +47,7 @@ def assert_equals(expected, received):
     assert check_approx_equals(
         expected, received
     ), f"Failed: Expected {expected}, but received {received}"
+
+
+def normalize_token(token):
+    return re.sub(r"\W+", "", token.lower())
