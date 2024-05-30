@@ -1,7 +1,7 @@
 """
-Your name
-class
-file description
+Camden Harris
+CSE 163 AX
+This program implements the functions for HW3
 """
 
 import os
@@ -22,10 +22,17 @@ os.environ["MPLCONFIGDIR"] = tempfile.gettempdir()
 
 # Define your functions here
 def compare_bachelors_1980(data: DataFrame) -> DataFrame:
+    """
+    Returns a dataframe with the
+    Keyword arguments:
+    n -- number made up of digits
+    m -- divisor
+    """
     is_1980 = data["Year"] == 1980
     not_A = data["Sex"] != "A"
+    bachelors = data["Min degree"] == "bachelor's"
 
-    df = data[is_1980 & not_A][["Sex", "Total"]]
+    df = data[is_1980 & not_A & bachelors][["Sex", "Total"]]
 
     return df.groupby("Sex")["Total"].sum().reset_index()
 
@@ -113,14 +120,14 @@ def fit_and_predict_degrees(data: DataFrame):
 
 
 def main():
-    data = pd.read_csv("HW3/nces-ed-attainment.csv", na_values=["---"])
+    data = pd.read_csv("nces-ed-attainment.csv", na_values=["---"])
     sns.set()
     # Call your functions here
-    # print(compare_bachelors_1980(data))
-    # print(top_2_2000s(data))
+    print(compare_bachelors_1980(data))
+    print(top_2_2000s(data))
     # line_plot_bachelors(data)
     # bar_chart_high_school(data)
-    plot_hispanic_min_degree(data)
+    # plot_hispanic_min_degree(data)
     # fit_and_predict_degrees(data)
 
 
