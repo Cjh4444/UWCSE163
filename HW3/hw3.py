@@ -79,13 +79,14 @@ def plot_hispanic_min_degree(data: DataFrame):
         is_after_1990 & is_before_2010 & (has_high_school | has_bachelors)
     ]
 
-    df = df.groupby(["Year", "Min degree"])["Hispanic"].mean().to_frame()
+    df = df.groupby(["Year", "Min degree"])["Hispanic"].mean().reset_index()
 
-    sns.catplot(data=df, x="Year", y="Hispanic", kind="bar", hue="Min degree")
+    sns.lineplot(data=df, x="Year", y="Hispanic", hue="Min degree")
 
-    plt.title("Percentage of Hispanic People Earning Degrees over Time")
+    plt.title("Percentage of Hispanic People Earning Degrees from 1990-2010")
     plt.xlabel("Year")
     plt.ylabel("Percentage")
+    plt.xticks(range(1990, 2010 + 1, 5))
     plt.savefig("HW3/plot_hispanic_min_degree.png", bbox_inches="tight")
 
 
@@ -119,8 +120,8 @@ def main():
     # print(top_2_2000s(data))
     # line_plot_bachelors(data)
     # bar_chart_high_school(data)
-    # plot_hispanic_min_degree(data)
-    fit_and_predict_degrees(data)
+    plot_hispanic_min_degree(data)
+    # fit_and_predict_degrees(data)
 
 
 if __name__ == "__main__":

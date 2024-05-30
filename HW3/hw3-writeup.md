@@ -11,11 +11,11 @@ Review the source of the dataset [here](https://nces.ed.gov/programs/digest/d18/
 ### #1: Plotting questions
 1. Do you think the bar chart from part 1b is an effective data visualization? Explain in 1-2 sentences why or why not.
 ```
-Yes, usin
+Yes, using a bar chart to plot the percentage of students by sex is an effective data visualization. This is because we're only looking at a single year, not a series of years, so a bar chart makes is very easy to compare the value/height for each column. Other data visualations like a scatter plot or line plot wouldn't be effective because of the limited scope of time we're looking at.
 ```
 2. Why did you choose the type of plot that you did in part 1c? Explain in a few sentences why you chose this type of plot.
 ```
-your answer here
+I chose to use a line plot because line plot are effective at analyzing data over an extended period of time and comparing trends. Looking at the graph, I can easily see how the percentage of hispanic people earning high school diplomas and bachelor's degrees has been increasing over the past 20 years. The line chart also has several benefits over other alternatives like a bar chart or scatter plot, as it has a continuous line that isn't interupted by other data like a bar chart might have, and the line shown is directly based on the data rather than an approximated trend line like what would be seen in a scatter plot.
 ```
 
 ### #2: Datasets
@@ -26,7 +26,7 @@ been flawed. Describe a possible bias present in this dataset and why it might h
 occurred. Your answer should be about 2 or 3 sentences long. Again, describe how
 the data is incorrect. (Note: incomplete is not necessarily the same as incorrect.)
 ```
-your answer here
+Depending on how the data was gathered, it could have inherent biases due to underrepresentation of certain groups due to historical methods of data gathering as well as where the data was gathered from. If certain groups were polled from less affluent areas, their percentage of bachelors/high school diploma earners could be significantly less than other groups who may have been polled in more affluent areas. Additionally, due to historical underrepresentation of certain groups, particularly prior to 1980, the amount of progress shown is restricted to a shorter time frame, and may also show the inherent reasons certain groups are significantly lower than others, as if the data sets weren't willing to track them, there's a high likelihood they weren't given the same educational opprotunities historically as other groups.
 ```
 ### #3: Context
 Later in the class we will talk about ethics in data science. Question #3 here is 
@@ -34,7 +34,7 @@ supposed to be a warm-up to get you thinking about our responsibilities when pro
 data, to get you to think about both the intended and unintended consequences of
 actions driven by data. 
 
-Good intentions don’t insure good outcomes. Many people have good inten\tions yet cause very real 
+Good intentions don’t insure good outcomes. Many people have good intentions yet cause very real 
 harm in the world. We’ll discuss specific examples of well-intentioned algorithms 
 perpetuating more harm later. In computing, that harm is magnified, 
 automated, and reproduced by computers.
@@ -46,5 +46,5 @@ injustice even when designed with equity in mind? In other words, we are trying
 to think of a way that we could use this data with good intentions, but actually 
 would end up causing harm. 
 ```
-your answer here
+This data set may have been used to dictate policy such as funding to certain schools or areas with more successful programs and defunding programs that were less successful. This could worsen issues of educational inequity as those who are already economically disadvantaged end up worse off. Using this data set for that purpose also ignore factors for why a certain group may be graduating at a lower rate, and some may correlate the data with certain groups being inherently less intelligent or less motivated, when the actual reason lies with other systematic issues that prevent those groups from being successful at the same rates as others.
 ```
