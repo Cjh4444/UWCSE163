@@ -26,7 +26,7 @@ class Document:
             }
 
     def term_frequency(self, word: str) -> float:
-        return self._words_frequency_dict[word]
+        return self._words_frequency_dict.get(normalize_token(word), 0)
 
     def get_path(self) -> str:
         return self._path
