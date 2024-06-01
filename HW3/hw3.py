@@ -1,7 +1,7 @@
 """
 Camden Harris
 CSE 163 AX
-This program implements the functions for HW3
+This program implements and runs the functions for HW3
 """
 
 import os
@@ -23,10 +23,10 @@ os.environ["MPLCONFIGDIR"] = tempfile.gettempdir()
 # Define your functions here
 def compare_bachelors_1980(data: DataFrame) -> DataFrame:
     """
-    Returns a dataframe with the
+    Returns a dataframe with the percentage of men and women who got a minimum
+    of a bachelor's degree in 1980
     Keyword arguments:
-    n -- number made up of digits
-    m -- divisor
+    data - educational attainment dataframe
     """
     is_1980 = data["Year"] == 1980
     not_A = data["Sex"] != "A"
@@ -38,6 +38,12 @@ def compare_bachelors_1980(data: DataFrame) -> DataFrame:
 
 
 def top_2_2000s(data: DataFrame, sex: str = "A") -> Series:
+    """
+    Returns a series of the two most common minimum degrees
+    earned for a given sex
+    Keyword arguments:
+    data - educational attainment dataframe
+    """
     is_after_2000 = 2000 <= data["Year"]
     is_before_2010 = data["Year"] <= 2010
     is_sex = data["Sex"] == sex
@@ -49,6 +55,11 @@ def top_2_2000s(data: DataFrame, sex: str = "A") -> Series:
 
 
 def line_plot_bachelors(data: DataFrame):
+    """
+    Creates a line plot of the % of sex A earning bachelor's degrees over time
+    Keyword arguments:
+    data - educational attainment dataframe
+    """
     is_A = data["Sex"] == "A"
     is_bachelors = data["Min degree"] == "bachelor's"
 
@@ -63,6 +74,12 @@ def line_plot_bachelors(data: DataFrame):
 
 
 def bar_chart_high_school(data: DataFrame):
+    """
+    Creates a bar chart comparing the percentage of
+    each sex attaining a high school diploma in 2009
+    Keyword arguments:
+    data - educational attainment dataframe
+    """
     is_2009 = data["Year"] == 2009
     has_high_school = data["Min degree"] == "high school"
 
@@ -77,6 +94,12 @@ def bar_chart_high_school(data: DataFrame):
 
 
 def plot_hispanic_min_degree(data: DataFrame):
+    """
+    Creates a line plot of the trend in the percentage of hispanic people
+    earning bachelor's degrees between 1990 and 2010 (inclusive)
+    Keyword arguments:
+    data - educational attainment dataframe
+    """
     is_after_1990 = 1990 <= data["Year"]
     is_before_2010 = data["Year"] <= 2010
     has_high_school = data["Min degree"] == "high school"
@@ -98,6 +121,12 @@ def plot_hispanic_min_degree(data: DataFrame):
 
 
 def fit_and_predict_degrees(data: DataFrame):
+    """
+    Predicts the percentage of degrees attained for
+    a given Sex, Min degree, and Year
+    Keyword arguments:
+    data - educational attainment dataframe
+    """
     data = data[["Year", "Min degree", "Sex", "Total"]].dropna()
 
     features = pd.get_dummies(data.loc[:, data.columns != "Total"])
@@ -120,15 +149,18 @@ def fit_and_predict_degrees(data: DataFrame):
 
 
 def main():
+    """
+    runs all the functions in this file
+    """
     data = pd.read_csv("nces-ed-attainment.csv", na_values=["---"])
     sns.set()
     # Call your functions here
     print(compare_bachelors_1980(data))
     print(top_2_2000s(data))
-    # line_plot_bachelors(data)
-    # bar_chart_high_school(data)
-    # plot_hispanic_min_degree(data)
-    # fit_and_predict_degrees(data)
+    line_plot_bachelors(data)
+    bar_chart_high_school(data)
+    plot_hispanic_min_degree(data)
+    fit_and_predict_degrees(data)
 
 
 if __name__ == "__main__":
