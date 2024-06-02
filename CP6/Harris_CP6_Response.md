@@ -6,7 +6,7 @@ review your answers and 'sign' his/her name here.
 > By signing here I hereby attest that I read the answers and agree that they are full
 > and correct. I will gladly accept their grade as my own.
 
-### Reviewed by: {Student Name}
+### Reviewed by: Victor
 
 # Questions:
 
@@ -60,8 +60,7 @@ return [ n for n in range(low, high) if n in items]
 ```
 
 ```
-explanation/analysis here - 3-5 lines/sentences
-
+The slow code iterates over a range and builds a list of numbers in that range that are also in another list. This is slow because each search operation is O(N) and the outer for-loop is O(N) as well. This causes an O(N) operation to execute N times, which results in a time complexity of O(N^2).
 ```
 
 **Question #5**
@@ -70,5 +69,5 @@ Don't forget to look at the scale. What do you suspect is the Big-O complexity
 for each? Explain the speeds of each method.
 
 ```
-Explanation/analysis here. 3-6 sentences
+ For get_list_slow, the time complexity from the graph appears to be O(N^2), because the quadratic fit line fits perfectly with the data. Looking at the code, this function is quite slow because it attempts to make a list of all the values between 1 & n in decreasing order but does it inefficiently by trying to add to the beginning of the list, which is an O(N) operation, which is repeated O(N) times, making the total complexity O(N^2). For get_list_med, the time complexity appears to be O(N). This function is significantly more efficient as looking at the code the items are appended rather than inserted, which is a O(1) operation, repeated O(N) times, making it O(N). For get_list_fast, the time complexity is also O(N). It achieves the same thing in the same way that get_list_med does, except it uses a list comprehension, making it about 8% faster.
 ```
