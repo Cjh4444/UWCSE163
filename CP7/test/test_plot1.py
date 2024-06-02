@@ -24,8 +24,12 @@ class Test1(unittest.TestCase):
         except AssertionError:
             pass
         finally:
-            self.assertFalse(mock_plt.called, "Does not use main method pattern")
-            self.assertFalse(mock_gpd.called, "Does not use main method pattern")
+            self.assertFalse(
+                mock_plt.called, "Does not use main method pattern"
+            )
+            self.assertFalse(
+                mock_gpd.called, "Does not use main method pattern"
+            )
 
     def test_plot(self):
         """
@@ -40,7 +44,7 @@ class Test1(unittest.TestCase):
 
         # Read attempt and solution
         attempt = plt.imread("south_america.png")
-        soln = plt.imread("test/expected.png")
+        soln = plt.imread("test/sa_expected.png")
 
         assert attempt.shape == soln.shape, (
             f"Expected a {soln.shape[0]} by {soln.shape[1]} plot, "
