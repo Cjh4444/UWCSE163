@@ -1,3 +1,9 @@
+"""
+Camden Harris
+CSE 163 AX
+Plot creation based on country data
+"""
+
 import os
 import tempfile
 import geopandas as gpd  # noqa: F401
@@ -8,6 +14,10 @@ os.environ["MPLCONFIGDIR"] = tempfile.gettempdir()
 
 
 def create_south_america_png():
+    """
+    Creates a heatmap plot of south america based on population
+    """
+
     gdf: GeoDataFrame = gpd.read_file("geo_data/ne_110m_admin_0_countries.shp")
     important = gdf[["CONTINENT", "POP_EST", "geometry"]]
 
@@ -29,6 +39,12 @@ def create_south_america_png():
 
 
 def create_small_and_rich_png():
+    """
+    Creates a heat map based on GDP of the
+    simultaneously rich and small countries
+    Rich: GDP of at least 500k
+    Small: Population below 80M
+    """
     gdf: GeoDataFrame = gpd.read_file("geo_data/ne_110m_admin_0_countries.shp")
 
     important = gdf[["CONTINENT", "POP_EST", "GDP_MD_EST", "geometry"]]
@@ -51,6 +67,13 @@ def create_small_and_rich_png():
 
 
 def create_populations_png():
+    """
+    Creates a 3 plots of world
+    Plot 1: Heatmap based on population of country
+    Plot 2: Heatmap based on population of subregion
+    Plot 3: Heatmap based on population of continent
+    """
+
     gdf: GeoDataFrame = gpd.read_file("geo_data/ne_110m_admin_0_countries.shp")
 
     important: GeoDataFrame = gdf[
