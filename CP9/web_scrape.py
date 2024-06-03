@@ -22,6 +22,7 @@ def get_selector_table():
     full_of_soup = BeautifulSoup(page.content, "html.parser")
 
     # get the table markup from soup object
+    table = full_of_soup.find("table")
 
     # parse the 3 columns by getting the <td> data that is a child of <tr>
 
