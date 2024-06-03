@@ -23,6 +23,7 @@ class CountMinSketch:
         """
         hash = Sigma: ch(i) * i
         """
+        return
         pass
 
     def hash_2(self, s):
