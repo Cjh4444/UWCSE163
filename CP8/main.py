@@ -1,3 +1,9 @@
+"""
+Camden Harris
+CSE 163 AX
+Image processing and augmentation
+"""
+
 import os
 import tempfile
 import imageio.v2 as imageio
@@ -7,16 +13,14 @@ import numpy as np
 os.environ["MPLCONFIGDIR"] = tempfile.gettempdir()
 
 
-def blur_image(file_in, file_out, kernel_size):
+def blur_image(file_in: str, file_out: str, kernel_size: int):
     """
-    file_in is the name of the file to blur
-    file_out is the name of the output file
-    kernel_size is >= 3 and is the size of the kernel used to blur
-    The method will create a blurred image of the original by
-    applying a blur kernel (a convolution). The kernel will be
-    applied to each of the 3 color channels. It is a 2D matrix
-    of all 1's and averaged by the number of elements. For example,
-    a 3x3 kernel will average the 9 elements' values.
+    Uses a sliding window algorithm with a
+    provided kernel size to blur an image
+    Keyword arguments:
+    file_in - location of file to blur
+    file_out - location to save file
+    kernel_size - side length of kernel
     """
     duck = imageio.imread(file_in).copy()
 
@@ -53,9 +57,11 @@ def blur_image(file_in, file_out, kernel_size):
 
 def edge_detect(file_in, file_out, channel):
     """
-    file_in is the name of the file to detect edges
-    file_out is the name of the output file, in gray scale only.
-    Channel is: 0=Red, 1=Green, 2=Blue
+    Uses a 3x3 kernel to detect edges on a given color channel
+    Keyword arguments:
+    file_in - location of file to edge detect
+    file_out - location to save edge file
+    channel - color channel (red = 1, green = 2, blue = 3)
     """
     # The input file will have 3 color channels. Instead of averaging
     # the 3 colors (RGB), use only a single channel as the input.
@@ -93,11 +99,7 @@ def edge_detect(file_in, file_out, channel):
 
 def duckie_hat():
     """
-    Add a green hat to the duck as described in the online lessons.
-    The main-hat should be a rectangle with the top-left corner at (20, 85)
-    and the bottom-right corner at (75, 135).
-    The hat brim should be a rectangle with the top-left corner at (75, 60)
-    and the bottom-right corner at (90, 160).
+    Adds a green top hat to the duck
     """
     duck_with_hat = imageio.imread("duck.jpg").copy()
 
