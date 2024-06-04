@@ -22,10 +22,19 @@ class MySet:
     """
 
     def __init__(self) -> None:
+        """
+        Initializes the set
+        """
         self._table = [0] * 10
         self._size = 0
 
     def add(self, value: int) -> None:
+        """
+        Adds item to set using hash function of % 10, doesn't
+        overwrite data or add if the number is already present
+        Keyword arguments:
+        value - value to add to set
+        """
         hash_val = value % 10
 
         if (value not in self) and (self._table[hash_val] == 0):
@@ -33,9 +42,17 @@ class MySet:
             self._size += 1
 
     def __contains__(self, value: int) -> bool:
+        """
+        python 'in' command overide, returns whether value is in set
+        Keyword arguments:
+        value - value to check
+        """
         return self._table[value % 10] == value
 
     def __len__(self) -> int:
+        """
+        python 'len' command overide, returns length of set
+        """
         return self._size
 
     pass

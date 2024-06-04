@@ -1,5 +1,5 @@
-from lesson25.web_scrape import get_selector_table
-import lesson26.my_set_client as my_set_client
+from web_scrape import get_selector_table
+import my_set_client as my_set_client
 
 
 def print_stats(cms, counts):
