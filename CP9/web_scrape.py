@@ -33,7 +33,6 @@ def get_selector_table():
     descriptions: list[str] = []
 
     for row in rows:
-        print(row)
         tds = row.find_all("td")
         selectors.append(tds[0].text)
         examples.append(tds[1].text)
