@@ -9,7 +9,6 @@ def problem_1(df):
 def problem_2(df):
     is_tonga = df["name"] == "Tonga"
     is_papua_new_guinea = df["name"] == "Papua New Guinea"
-   #ll ohewqeweq
     tonga_papua_df = df[is_tonga | is_papua_new_guinea]
 
     is_8th_of_month = tonga_papua_df["day"] == 8
