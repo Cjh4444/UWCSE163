@@ -110,7 +110,7 @@ def reformat_date(date: str, old_format: str, new_format: str) -> str:
     )
 
 
-def longest_word(file_name: str) -> str:
+def longest_word(file_name: str) -> str | None:
     """
     Returns the longest word and it's line location from a file
     Keyword arguments:

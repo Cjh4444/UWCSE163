@@ -91,10 +91,10 @@ def test_longest_word():
     """
     Runs test cases for longest_word function
     """
-    assert_equals("3: Merrily,", hw1.longest_word("HW1/song.txt"))
-    assert_equals("3: everywhere", hw1.longest_word("HW1/little_lamb.txt"))
-    assert_equals("1: crawled", hw1.longest_word("HW1/spider.txt"))
-    assert_equals(None, hw1.longest_word("HW1/blank.txt"))
+    assert_equals("3: Merrily,", hw1.longest_word("song.txt"))
+    assert_equals("3: everywhere", hw1.longest_word("little_lamb.txt"))
+    assert_equals("1: crawled", hw1.longest_word("spider.txt"))
+    assert_equals(None, hw1.longest_word("blank.txt"))
     print("longest word passed all tests")
 
 
