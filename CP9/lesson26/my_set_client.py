@@ -1,5 +1,5 @@
 # TODO: Need an import statement here
-from CP9.lesson26.my_set import MySet
+from lesson26.my_set import MySet
 
 
 def main():

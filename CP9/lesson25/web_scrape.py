@@ -25,10 +25,30 @@ def get_selector_table():
     table = full_of_soup.find("table")
 
     # parse the 3 columns by getting the <td> data that is a child of <tr>
+    rows = table.find_all("tr")[1:]
 
     # create a list for each column, getting the text content as needed
+    selectors: list[str] = []
+    examples: list[str] = []
+    descriptions: list[str] = []
+
+    for row in rows:
+        print(row)
+        tds = row.find_all("td")
+        selectors.append(tds[0].text)
+        examples.append(tds[1].text)
+        descriptions.append(tds[2].text)
 
     # Create and return a dataframe using the lists created above
+    df = pd.DataFrame(
+        {
+            "Selector": selectors,
+            "Example": examples,
+            "Description": descriptions,
+        }
+    )
+
+    return df
 
 
 def main():
