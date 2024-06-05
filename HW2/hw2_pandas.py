@@ -49,7 +49,7 @@ def mean_attack_for_type(df: DataFrame, pokemon_type: str) -> float | None:
     is_type = df["type"] == pokemon_type
     type_df = df[is_type]
 
-    return None if type_df.empty else df[is_type]["atk"].mean()
+    return None if type_df.empty else type_df["atk"].mean()
 
 
 def count_types(df: DataFrame) -> dict:
