@@ -19,7 +19,7 @@ class Document:
         path - path to desired file
         """
         self._path = path
-        with open(self._path) as f:
+        with open(self._path, encoding="utf-8") as f:
 
             _ = dict()
             for line in f:
