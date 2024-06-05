@@ -95,6 +95,16 @@ def mean_attack_for_type_test(
         47.5,
     )
 
+    assert_equals(
+        None,
+        hw2_manual.mean_attack_for_type(data, "bingbong"),
+    )
+
+    assert_equals(
+        None,
+        hw2_pandas.mean_attack_for_type(df, "bingbong"),
+    )
+
     # tests on custom pokemon_self_tests.csv data
     assert_equals(
         hw2_manual.mean_attack_for_type(self_data, "fire"),
@@ -103,6 +113,15 @@ def mean_attack_for_type_test(
     assert_equals(
         hw2_pandas.mean_attack_for_type(self_df, "fire"),
         93 + 1 / 3,
+    )
+
+    assert_equals(
+        None,
+        hw2_manual.mean_attack_for_type(self_data, "bingbong"),
+    )
+    assert_equals(
+        None,
+        hw2_pandas.mean_attack_for_type(self_df, "bingbong"),
     )
 
     print("mean attack for type passed all tests")
@@ -173,10 +192,10 @@ def main():
     main function to run all test cases
     """
     # Call your test functions here!
-    data = parse("HW2/pokemon_test.csv")
-    df = pd.read_csv("HW2/pokemon_test.csv")
-    self_data = parse("HW2/pokemon_self_tests.csv")
-    self_df = pd.read_csv("HW2/pokemon_self_tests.csv")
+    data = parse("pokemon_test.csv")
+    df = pd.read_csv("pokemon_test.csv")
+    self_data = parse("pokemon_self_tests.csv")
+    self_df = pd.read_csv("pokemon_self_tests.csv")
 
     species_count_test(data, df, self_data, self_df)
     max_level_test(data, df, self_data, self_df)

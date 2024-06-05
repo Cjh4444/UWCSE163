@@ -45,17 +45,18 @@ def filter_range(data: list, lower: int, upper: int) -> list:
     ]
 
 
-def mean_attack_for_type(data: list, type: str) -> float:
+def mean_attack_for_type(data: list, pokemon_type: str) -> float | None:
     """
     Returns the average attack level for a given type
     Keyword arguments:
     data -- parsed csv data
-    type -- given pokemon type
+    pokemon_type -- given pokemon type
     """
     attack_list = [
-        pokemon["atk"] for pokemon in data if pokemon["type"] == type
+        pokemon["atk"] for pokemon in data if pokemon["type"] == pokemon_type
     ]
-    return sum(attack_list) / len(attack_list)
+
+    return None if not attack_list else sum(attack_list) / len(attack_list)
 
 
 def count_types(data: list) -> dict:

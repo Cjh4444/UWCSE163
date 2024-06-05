@@ -39,15 +39,17 @@ def filter_range(df: DataFrame, lower: int, upper: int) -> list:
     return list(df[is_above_min & is_below_max]["name"])
 
 
-def mean_attack_for_type(df: DataFrame, type: str) -> float:
+def mean_attack_for_type(df: DataFrame, pokemon_type: str) -> float | None:
     """
     Returns the average attack level for a given type
     Keyword arguments:
     df -- dataframe from csv
-    type -- given pokemon type
+    pokemon_type -- given pokemon type
     """
-    is_fire = df["type"] == type
-    return df[is_fire]["atk"].mean()
+    is_type = df["type"] == pokemon_type
+    type_df = df[is_type]
+
+    return None if type_df.empty else type_df["atk"].mean()
 
 
 def count_types(df: DataFrame) -> dict:
